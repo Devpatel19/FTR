@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: FTR_ms-User
+          uri: lb://FTR_ms-User
+          predicates:
+            - Path=/ftr/userProfile/**
+            
+        - id: TerminalMS
+          uri: lb://TerminalMS
+          predicates:
+            - Path=/ftr/terminals/**
+            
+        - id: FTR-vehicle
+          uri: lb://FTR-vehicle
+          predicates:
+            - Path=/ftr/vehicles/**
+            
+        - id: WorkItemMS
+          uri: lb://WorkItemMS//ftr/workItems
+          predicates:
+            - Path=/ftr/workItems/**
+            
+             
+        
+        

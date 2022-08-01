@@ -1,0 +1,85 @@
+<div class="container">
+  <div *ngIf = "loading" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+    <div class="action">
+      <h1>Terminal : {{ terminalId }}</h1>
+      
+    </div>
+    <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">ID</th>
+            <td>{{ terminal.terminalId}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Name</th>
+            <td>{{ terminal.terminalName}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Country</th>
+            <td>{{ terminal.country}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Item Type</th>
+            <td>{{ terminal.itemType}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td>{{ terminal.terminalDescription}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Capacity</th>
+            <td>{{ terminal.capacity}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Status</th>
+            <td>{{ terminal.status}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Harbor Location</th>
+            <td>{{ terminal.harborLocation}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Available Capacity</th>
+            <td>{{ terminal.availableCapacity}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+    <div *ngIf = "error">
+      {{ errorMessage }}
+    </div>
+    <br>
+
+      <div class="action">
+      <button class = "btn btn-primary" (click) = "goToDetails()">Go Back</button>
+
+      <button type="button" class="btn btn-danger" [disabled] = "error" (click) = "modal=true">
+        Delete terminal
+      </button>
+      </div>
+   
+
+    
+
+  <div *ngIf = "modal" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="dialog">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          Are you sure you want to delete terminal {{ terminalId }} ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+          <button type="button" class="btn btn-danger" (click) = "deleteTerminal()">YES</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

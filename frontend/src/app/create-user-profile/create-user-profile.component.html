@@ -1,0 +1,89 @@
+
+<div class="create">
+
+<div class="container ">
+  <h1 style="text-align: center; font-size: x-large;">User Registration</h1>
+</div>
+<br><br>
+<div class="container">
+  <form >
+      <form>
+          <div class="row" >
+            <div class="col">
+              <input [(ngModel)]="user.firstName" name="firstName" type="text" class="form-control" placeholder="First name">
+       
+            </div>
+            <div class="col">
+              <input [(ngModel)]="user.lastName" name="lastName" type="text" class="form-control" placeholder="Last name">
+              
+            </div>
+          </div>
+        </form>
+
+        <div style="margin-top: 20px;" class="form-group">
+          <form >
+              <div class="row">
+                <div class="col">
+                  <input [(ngModel)]="user.emailId" name="email" (click)="email()" type="emailId" class="form-control" placeholder="EmailId">
+                  <a *ngIf="em" style="color:red">should be alphanumeric</a>
+                </div>
+                <div class="col">
+                  <input [(ngModel)]="user.mobileNumber" (click)="mob()" name="mobileNumber" type="number" class="form-control" placeholder="Mobile No.">
+                  <a *ngIf="mb" style="color:red">should contain 10 digits</a>
+                </div>
+              </div>
+            </form>
+        </div>
+        
+        <div style="margin-top: 20px;" class="form-group">
+          <form >
+              <div class="row">
+                <div class="col">
+                  <input [(ngModel)]="user.password" name="password" (click)="pwd()" type="password" class="form-control" placeholder="Password">
+                  <a *ngIf="pw" style="color:red">should contain(@,#) and length b/w 7 to 12</a>
+                </div>
+                <div class="col">
+                  <input [(ngModel)]="user.nationality" name="nationality"  type="text" class="form-control" placeholder="Nationality">
+                </div>
+              </div>
+            </form>
+        </div>
+
+        <div style="margin-top: 20px;" class="form-group">
+          <form >
+              <div class="row">
+                <div class="col">
+                  <input [(ngModel)]="user.passportNumber" name="passportNumber" (click)="passP()"  type="text" class="form-control" placeholder="Passport No.">
+                  <a *ngIf="pp" style="color:red">length between 7 to 12 characters</a>
+                </div>
+                <div class="col">
+                  <input [(ngModel)]="user.permanentAddress" name="permanentAddress"  type="text" class="form-control" placeholder="Address">
+                </div>
+              </div>
+            </form>
+        </div>
+        <div style="margin-top: 20px;" class="form-group" >
+          <form >
+            <div class="row">
+              <div class="col">
+                <input [(ngModel)]="user.officeAddress" name="officeAddress"  type="text" class="form-control" placeholder="officeAddress">
+              </div>
+              <div class="col">
+                <input [(ngModel)]="user.personalIdentificationNumber" (click)="pIdNo()" name="personalIdentificationNumber"  type="text" class="form-control" placeholder=" personalIdentificationNumber">
+                <a *ngIf="pId" style="color:red" >length should be of 12 characters</a>
+              </div>
+             
+            </div>
+          </form>
+        </div>
+     
+      <button type="submit" class="btn btn-primary" style="margin-right: 20px; margin-top: 20px;" (click)="Onsubmit()">Submit</button>
+      <button type="submit" class="btn btn-primary" style="margin-top: 20px;" routerLink="/FTR">Back</button>
+    </form>
+</div>
+
+<p *ngIf="sts" style="color:green; text-align: center;">{{status}}</p>
+<p *ngIf="!sts" style="color:red; text-align: center;">{{status}}</p>
+
+
+</div>

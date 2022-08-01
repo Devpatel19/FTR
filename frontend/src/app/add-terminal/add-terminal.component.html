@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="action">
+        <h1>ADD TERMINAL</h1>
+        <button class="btn btn-primary" (click)="goToDetails()">Go Back</button>
+    </div>
+    <form [formGroup]="addTerminalForm">
+        <div class="form-group">
+            <label>Terminal Name</label>
+            <input type="text" class="form-control" formControlName="terminalName">
+            <div *ngIf="addTerminalForm.controls['terminalName'].errors" class="alert alert-danger">
+                <p *ngIf="addTerminalForm.controls['terminalName'].errors?.['required']">
+                    This field is required!
+                </p>
+                <p *ngIf="addTerminalForm.controls['terminalName'].errors?.['lengthInvalid']">
+                    {{ addTerminalForm.controls['terminalName'].errors?.['lengthInvalid'].message }}
+                </p>
+
+            </div>
+
+            <div class="form-group">
+                <label>Country</label>
+                <input type="text" class="form-control" formControlName="country">
+                <div *ngIf="addTerminalForm.controls['country'].errors" class="alert alert-danger">
+                    <p *ngIf="addTerminalForm.controls['country'].errors?.['required']">
+                        This field is required!
+                    </p>
+                    <p *ngIf="addTerminalForm.controls['country'].errors?.['lengthInvalid']">
+                        {{ addTerminalForm.controls['country'].errors?.['lengthInvalid'].message }}
+                    </p>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Item Type</label>
+                    <input type="text" class="form-control" formControlName="itemType">
+                    <div *ngIf="addTerminalForm.controls['itemType'].errors" class="alert alert-danger">
+                        <p *ngIf="addTerminalForm.controls['itemType'].errors?.['required']">
+                            This field is required!
+                        </p>
+                        <p *ngIf="addTerminalForm.controls['itemType'].errors?.['lengthInvalid']">
+                            {{ addTerminalForm.controls['itemType'].errors?.['lengthInvalid'].message }}
+                        </p>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Terminal Description</label>
+                        <input type="text" class="form-control" formControlName="terminalDescription" maxLength="25">
+                        <div *ngIf="addTerminalForm.controls['terminalDescription'].errors" class="alert alert-danger">
+                            <p *ngIf="addTerminalForm.controls['terminalDescription'].errors?.['required']">
+                                This field is required! and
+                                Maximum 25 characters allowed!
+                            </p>
+                            <p *ngIf="addTerminalForm.controls['terminalDescription'].errors?.['maxLength']">
+                                Maximum 25 characters allowed!
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Capacity</label>
+                            <input type="number" class="form-control" formControlName="capacity" max="99999">
+                            <div *ngIf="addTerminalForm.controls['capacity'].errors" class="alert alert-danger">
+
+                                <p *ngIf="addTerminalForm.controls['capacity'].errors?.['required']">
+                                    This field is required!
+                                </p>
+                                <p *ngIf="addTerminalForm.controls['capacity'].errors?.['max']">
+                                    Value must be less then 99999
+                                </p>
+                            </div>
+                            <br>
+
+                            <!-- <div class="form-group">
+            <label>Status</label>
+            <input type="text" class="form-control" formControlName="status">
+            <div *ngIf="addTerminalForm.controls['status'].errors" class="alert alert-danger">
+                <p *ngIf="addTerminalForm.controls['status'].errors?.['required']">
+                    This field is required!
+                </p>  
+        </div> -->
+
+                            <div class="form-group">
+                                <label>Status</label>
+                                <div class="radio-input">
+                                   <div class="radio-option">
+                                    <input type="radio" value="AVAILABLE" formControlName="status">
+                                    <span>&nbsp;Available</span>
+                                    </div><div class="radio-option">
+                                    <input type="radio" value="UNAVAILABLE" formControlName="status">
+                                    <span>&nbsp;Unavailable</span>
+                                </div>
+                                </div>
+                                    <div *ngIf="addTerminalForm.controls['status'].errors" class="alert alert-danger">
+                                        <p *ngIf="addTerminalForm.controls['status'].errors?.['required']">
+                                            Please select any one option.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Harbor Location</label>
+                                <input type="text" class="form-control" formControlName="harborLocation">
+                                <div *ngIf="addTerminalForm.controls['harborLocation'].errors"
+                                    class="alert alert-danger">
+                                    <p *ngIf="addTerminalForm.controls['harborLocation'].errors?.['required']">
+                                        This field is required!
+                                    </p>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Available Capacity</label>
+                                    <input type="number" class="form-control" formControlName="availableCapacity">
+                                    <div *ngIf="addTerminalForm.controls['availableCapacity'].errors"
+                                        class="alert alert-danger">
+                                        <p *ngIf="addTerminalForm.controls['availableCapacity'].errors?.['required']">
+                                            This field is required!
+                                        </p>
+                                    </div>
+
+                                    <br>
+
+                                    <button type="submit" class="btn btn-primary" [disabled]="!addTerminalForm.valid"
+                                        (click)="onSubmit()">ADD</button>
+
+
+                                </div>

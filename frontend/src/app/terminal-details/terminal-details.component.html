@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="action">
+    <h1>TERMINALS</h1>
+    <button class="btn btn-primary" (click)="goToAdd()">Add Terminal</button>
+  </div>
+  <div class="action">
+    <div class="search-box">
+      <input type="text" [(ngModel)]="itemType" placeholder="Search By Item Type" (ngModelChange)="setTerminals()">
+      <button class="btn btn-primary" (click)="searchByItemType()">search</button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <div *ngIf="!loading">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NAME</th>
+          <th scope="col">COUNTRY</th>
+          <th scope="col">STATUS</th>
+          <th>VIEW</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="!error">
+        <tr *ngFor="let terminal of filteredTerminals">
+          <th scope="row">{{ terminal.terminalId }}</th>
+          <td>{{ terminal.terminalName }}</td>
+          <td>{{ terminal.country }}</td>
+          <td>{{ terminal.status }}</td>
+          <td><button class="btn btn-info" (click)="viewTerminal(terminal.terminalId)">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="error">
+      {{ errorMessage}}
+    </div>
+  </div>
+</div>

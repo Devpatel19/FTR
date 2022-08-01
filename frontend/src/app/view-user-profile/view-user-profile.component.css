@@ -1,0 +1,20 @@
+a:hover{
+    cursor: pointer;
+}
+.t:hover{
+    background-color: azure;
+}
+
+.tb{
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    justify-content: flex-end;
+    
+    flex-grow: 5;
+}

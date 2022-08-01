@@ -1,0 +1,57 @@
+<!-- <app-vehicles></app-vehicles> -->
+<br/>
+<br/>
+<form  class="login-form" [formGroup]="loginForm" #myForm="ngForm" action="/form/submit" method="post" >
+
+    <h2 style="color: #0c0c0c">Add a new Vehicle</h2>
+
+    <span>Vehicle Number</span>
+    <input type="String" formControlName="vehicleNumber" class="form-control" />
+
+    <br/>
+
+    <span>Vehicle Name</span>
+    <input type="String" formControlName="vehicleName" maxlength="30" class="form-control" />
+
+    <br/>
+
+    <span>Max Lifting Capacity</span>
+    <input type="number" formControlName="maxLiftingCapacity" class="form-control" />
+
+ 
+    <br/>
+
+    <span>Retire Date</span>
+    <input type="date" formControlName="retireDate" class="form-control" />
+
+    <br/>
+
+    <span>Vehicle Status</span>
+    <input type="String" formControlName="vehicleStatus" class="form-control" />
+
+  
+    <br/>
+
+    <span>Harbor Location</span>
+    <input type="String" formControlName="harborLocation" required minlength="5" maxlength="25" class="form-control" />
+    
+  
+    <br/>
+
+    <span>Country</span>
+    <input type="String" formControlName="country" minlength="5" maxlength="25" class="form-control" />
+
+   
+
+    <br/>
+
+
+
+    <button (click)="addVehicle()" type="submit" [disabled]="!myForm.valid">Add Vehicle</button>
+    <br />
+    <br />
+    <span style="color: #29873e;padding-left:20px;padding-right: 10px;padding-top: 20px;padding-bottom: 
+    20px;font-family:monospace;font-size: 20px;">{{sucessMessage}}</span>
+     <span style="color: red;padding-left:20px;padding-right: 10px;padding-top: 20px;padding-bottom: 
+     20px;font-family:monospace;font-size: 20px;">{{failureMessage}}</span>
+</form>

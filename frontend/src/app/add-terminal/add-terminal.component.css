@@ -1,0 +1,39 @@
+.ng-valid[required]  {
+    border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}
+
+.container{
+    margin: auto;
+    width: 50%;
+    margin-top:50px;
+}
+
+.action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+}
+
+h1{
+    font-family: serif;
+    font-weight: bold;
+
+    font-size: 3em;
+}
+
+.radio-input{
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.radio-option{
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}

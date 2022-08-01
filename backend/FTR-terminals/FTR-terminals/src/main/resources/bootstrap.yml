@@ -1,0 +1,18 @@
+server:
+  port: 3000
+  
+spring:
+  application:
+    name: TerminalMS
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+      config:
+        fail-fast: false
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        data-key: data
+        profileSeparator: '::'
+        format: YAML

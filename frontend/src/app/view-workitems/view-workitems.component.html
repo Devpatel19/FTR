@@ -1,0 +1,44 @@
+<div class="view-container">
+    <div class="inner-container">
+        <h1 class="heading">Workitems</h1>
+        <div class="table-container">
+            <table border="1">
+                <thead>
+                    <th>User</th>
+                    <th>WorkItem ID</th>
+                    <th>Item Name</th>
+                    <th>Item Type</th>
+                    <th>Item Description</th>
+                    <th>Message</th>
+                    <th>Quantity</th>
+                    <th>Source Country</th>
+                    <th>Destination Country</th>
+                    <th>Shipping Date</th>
+                    <th>Amount</th>
+                </thead>
+                <tbody *ngFor="let record of viewSet">
+                    <tr>
+                        <td>{{record.userId}}</td>
+                        <td>{{record.workitemId}}</td>
+                        <td>{{record.itemName}}</td>
+                        <td>{{record.itemType}}</td>
+                        <td>{{record.itemDescription}}</td>
+                        <td>{{record.messageToRecipient}}</td>
+                        <td>{{record.quantity}}</td>
+                        <td>{{record.sourceCountry}}</td>
+                        <td>{{record.destinationCountry}}</td>
+                        <td>{{record.shippingDate}}</td>
+                        <td>{{record.amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="paginator mt-2 mb-2">
+            <button class="btn mr-1 btn-info" (click)="onPrev()" [disabled]="disableLeft"> &larr; </button>
+            <button class="btn btn-info" (click)="onNext()" [disabled]="disableRight"> &rarr; </button>
+        </div>
+        <div class="back-container">
+            <button class="btn btn-info" (click)="onBack()">Back</button>
+        </div>
+    </div>
+</div>

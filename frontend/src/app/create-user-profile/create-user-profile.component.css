@@ -1,0 +1,8 @@
+
+.create{
+    background-color: rgb(235, 233, 233);
+    min-height: 100vh;
+}
+input:hover{
+    background-color: rgb(68, 158, 158);
+}

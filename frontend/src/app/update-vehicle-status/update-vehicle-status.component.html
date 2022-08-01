@@ -1,0 +1,47 @@
+<!-- <app-vehicles></app-vehicles> -->
+
+<div class="panel panel-primary">
+    <form class="login-form" [formGroup]="loginForm" #myForm="ngForm">
+      <h1 background-color: #3604aa; style="color: #0c0c0c">Update Vehicle</h1>
+  
+      <span>Enter Vehicle Number</span>
+      <input type="String" formControlName="vehicleNumber" class="form-control" />
+  
+      <!-- div *ngIf="loginForm.controls['vehicleNumber'].invalid">
+        <div *ngIf="loginForm.controls['vehicleNumber'].errors.required" style="color:red">
+          Please Enter Vehicle Number.
+        </div> 
+      </div>-->
+
+      <br />
+      <br />
+
+      <span><b>----------------------------------------Select the Vehicle Status------------------------------------------</b></span>
+      <br />
+      
+      <!-- <mat-form-field appearance="fill" style="background-color: white; width: 560px;"> -->
+  
+          <label>Select a Field</label>
+          <select formControlName="update_template">
+              <option *ngFor="let categorie of categories" [value]="categorie.value">{{categorie.name}}</option>
+          </select>
+      <!-- </mat-form-field> -->
+      <br />
+      <br />
+  
+      <button [disabled]="!myForm.valid" (click)="updateStatus()" type="submit">Update Status</button>
+  
+      <div>
+        <br />
+      </div>
+  
+      <span *ngIf="showVehicles"
+        style="color: #29873e;padding-left:20px;padding-right: 10px;padding-top: 20px;padding-bottom: 20px;font-family:monospace;font-size: 20px;">{{sucessMessage}}</span>
+
+        
+      <span *ngIf="showVehicles"
+      style="color: #29873e;padding-left:20px;padding-right: 10px;padding-top: 20px;padding-bottom: 20px;font-family:monospace;font-size: 20px;">{{failureMessage}}</span>
+
+  
+    </form>
+  </div>

@@ -1,0 +1,172 @@
+<div class="create-container">
+    <div class="form-container">
+        <p class="form-heading">Create a Work Item</p>
+        <form [formGroup]="createForm" (ngSubmit)="onSubmit()" >
+            <div class="inner-container form-group">
+                <label for="userId">User ID</label>
+                <input id="userId" formControlName="userId" class="form-control" />
+                <p *ngIf="createForm.controls['userId'].touched&&createForm.controls['userId'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['userId'].touched&&createForm.controls['userId'].errors?.['maxlength']" class="error-message">
+                *Maximum 5 characters are allowed.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="itemName">Item Name</label>
+                <input id="itemName" formControlName="itemName" class="form-control" />
+                <p *ngIf="createForm.controls['itemName'].touched&&createForm.controls['itemName'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['itemName'].touched&&createForm.controls['itemName'].errors?.['maxlength']" class="error-message">
+                *Item Name cannot be more than 25 characters.
+                </p>
+                <p *ngIf="createForm.controls['itemName'].touched&&createForm.controls['itemName'].errors?.['minlength']" class="error-message">
+                    *Item Name should be minimum of 3 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="itemType">Item Type</label>
+                <input id="itemType" formControlName="itemType" class="form-control" />
+                <p *ngIf="createForm.controls['itemType'].touched&&createForm.controls['itemType'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['itemType'].touched&&createForm.controls['itemType'].errors?.['maxlength']" class="error-message">
+                *Item Type cannot be more than 25 characters.
+                </p>
+                <p *ngIf="createForm.controls['itemType'].touched&&createForm.controls['itemType'].errors?.['minlength']" class="error-message">
+                    *Item Type should be minimum of 4 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="itemDescription">Item Description</label>
+                <textarea cols="5" id="itemDescription" formControlName="itemDescription" class="form-control" ></textarea>
+                <p *ngIf="createForm.controls['itemDescription'].touched&&createForm.controls['itemDescription'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['itemDescription'].touched&&createForm.controls['itemDescription'].errors?.['maxlength']" class="error-message">
+                *Cannot be more than 45 characters.
+                </p>
+                <p *ngIf="createForm.controls['itemDescription'].touched&&createForm.controls['itemDescription'].errors?.['minlength']" class="error-message">
+                    *Should be minimum of 10 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="messageToRecipient">Message To Recipient</label>
+                <textarea cols="5" id="messageToRecipient" formControlName="messageToRecipient" class="form-control" ></textarea>
+                <p *ngIf="createForm.controls['messageToRecipient'].touched&&createForm.controls['messageToRecipient'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['messageToRecipient'].touched&&createForm.controls['messageToRecipient'].errors?.['maxlength']" class="error-message">
+                *Cannot be more than 45 characters.
+                </p>
+                <p *ngIf="createForm.controls['messageToRecipient'].touched&&createForm.controls['messageToRecipient'].errors?.['minlength']" class="error-message">
+                    *Should be minimum of 10 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="quantity">Quantity</label>
+                <input id="quantity"  formControlName="quantity" class="form-control" />
+                <p *ngIf="createForm.controls['quantity'].touched&&createForm.controls['quantity'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['quantity'].touched&&createForm.controls['quantity'].errors?.['pattern']" class="error-message">
+                *Characters are not allowed.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="sourceCountry">Source Country</label>
+                <input id="sourceCountry" formControlName="sourceCountry" class="form-control" />
+                <p *ngIf="createForm.controls['sourceCountry'].touched&&createForm.controls['sourceCountry'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['sourceCountry'].touched&&createForm.controls['sourceCountry'].errors?.['maxlength']" class="error-message">
+                *Cannot be more than 25 characters.
+                </p>
+                <p *ngIf="createForm.controls['sourceCountry'].touched&&createForm.controls['sourceCountry'].errors?.['minlength']" class="error-message">
+                    *Should be minimum of 5 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="destinationCountry">Destination Country</label>
+                <input id="destinationCountry" formControlName="destinationCountry" class="form-control" />
+                <p *ngIf="createForm.controls['destinationCountry'].touched&&createForm.controls['destinationCountry'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['destinationCountry'].touched&&createForm.controls['destinationCountry'].errors?.['maxlength']" class="error-message">
+                *Cannot be more than 25 characters.
+                </p>
+                <p *ngIf="createForm.controls['destinationCountry'].touched&&createForm.controls['destinationCountry'].errors?.['minlength']" class="error-message">
+                    *Should be minimum of 5 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="selectedHarborLocation">Habor Location</label>
+                <input id="selectedHarborLocation" formControlName="selectedHarborLocation" class="form-control" />
+                <p *ngIf="createForm.controls['selectedHarborLocation'].touched&&createForm.controls['selectedHarborLocation'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['selectedHarborLocation'].touched&&createForm.controls['selectedHarborLocation'].errors?.['maxlength']" class="error-message">
+                *Cannot be more than 25 characters.
+                </p>
+                <p *ngIf="createForm.controls['selectedHarborLocation'].touched&&createForm.controls['selectedHarborLocation'].errors?.['minlength']" class="error-message">
+                    *Should be minimum of 5 characters.
+                </p>
+            </div>
+            <div class="inner-container form-group">
+                <label for="shippingDate">Shipping Date</label>
+                <input type="text"  id="shippingDate"  formControlName="shippingDate" class="form-control" />
+                <p *ngIf="createForm.controls['shippingDate'].touched&&createForm.controls['shippingDate'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="createForm.controls['shippingDate'].touched&&createForm.controls['shippingDate'].errors?.['pattern']" class="error-message">
+                *Should be in following format: dd-MMM-YYYY
+                </p>
+            </div>
+            <div class="button-container"> 
+                <button type="submit" class="btn btn-success" [disabled]="!createForm.valid">Submit</button>
+                <button class="btn btn-info" (click)="onBack()">Back</button>
+            </div>
+            <br/>
+            <span class="success-message" *ngIf="successObj" >
+                <p>Workitem Registration is Successful!</p>
+            </span>
+            <span class="error-message" *ngIf="errorMessage!=null">
+                {{errorMessage}}
+            </span>
+        </form>
+    </div>
+    <div class="table-container" *ngIf="successObj">
+        <h1 class="table-heading">Your Workitem Details:</h1>
+        <table border="1">
+            <thead>
+                <th>User ID</th>
+                <th>WorkItem ID</th>
+                <th>Item Name</th>
+                <th>Item Type</th>
+                <th>Item Description</th>
+                <th>Message</th>
+                <th>Quantity</th>
+                <th>Source Country</th>
+                <th>Destination Country</th>
+                <th>Shipping Date</th>
+                <th>Amount</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{successObj.userId}}</td>
+                    <td>{{successObj.workitemId}}</td>
+                    <td>{{successObj.itemName}}</td>
+                    <td>{{successObj.itemType}}</td>
+                    <td>{{successObj.itemDescription}}</td>
+                    <td>{{successObj.messageToRecipient}}</td>
+                    <td>{{successObj.quantity}}</td>
+                    <td>{{successObj.sourceCountry}}</td>
+                    <td>{{successObj.destinationCountry}}</td>
+                    <td>{{successObj.shippingDate}}</td>
+                    <td>{{successObj.amount}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="workitems-container">
+    <div class="card-columns" [routerLink]="['register']">
+        <div class="card p-3  bg-dark">
+            <div class="card-body cust-card">
+                <h5 class="card-title">Register Work Item</h5>
+                <p class="card-text">Create a work item for transport.</p>
+            </div>
+        </div>
+        <div class="card p-3 bg-dark card-hover" [routerLink]="['assign']"  >
+            <div class="card-body cust-card">
+                <h5 class="card-title">Assign Terminal</h5>
+                <p class="card-text">Assign new terminal to a work item.</p>
+            </div>
+        </div>
+        <div class="card p-3 card-hover bg-dark" [routerLink]="['allocation']">
+            <div class="card-body cust-card">
+                <h5 class="card-title">Allocate vehicle</h5>
+                <p class="card-text">Allocate vehicle to a work item</p>
+            </div>
+        </div>
+        <div class="card p-3 bg-dark" [routerLink]="['searchbyvehicle']">
+            <div class="card-body cust-card">
+                <h5 class="card-title">View Work Item</h5>
+                <p class="card-text">View work Item details based on vehicle number.</p>
+            </div>
+        </div>
+        <div class="card p-3 bg-dark" [routerLink]="['searchbyuser']">
+            <div class="card-body cust-card">
+                <h5 class="card-title">View Work Item</h5>
+                <p class="card-text">View work Item details based on User.</p>
+            </div>
+        </div>
+        <div class="card p-3 text-right bg-dark" [routerLink]="['view']">
+            <div class="card-body cust-card">
+                <h5 class="card-title">Display All WorkItems</h5>
+                <p class="card-text">Lists all available work items.</p>
+            </div>
+        </div> 
+        <div class="card p-3 bg-dark" [routerLink]="['update']">
+            <div class="card-body cust-card">
+                <h5 class="card-title">Update Work Item</h5>
+                <p class="card-text">Allows to update the work item status</p>
+            </div>
+        </div>
+    </div>
+ </div>

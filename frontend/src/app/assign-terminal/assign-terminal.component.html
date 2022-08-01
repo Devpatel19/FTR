@@ -1,0 +1,28 @@
+<div class="assignterminal-container">
+    <div class="form-container">
+        <p class="form-heading">Assign a new terminal to work item</p>
+        <form [formGroup]="terminalForm" (ngSubmit)="onSubmit()">
+            <div class="inner-container form-group">
+                <label for="terminalId">WorkItem Id</label>
+                <input id="terminalId" formControlName="terminalId" class="form-control" />
+                <p *ngIf="terminalForm.controls['terminalId'].touched&&terminalForm.controls['terminalId'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="terminalForm.controls['terminalId'].touched&&terminalForm.controls['terminalId'].errors?.['maxlength']" class="error-message">
+                *Maximum 5 characters are allowed.
+                </p>
+            </div>
+            <div class="button-container"> 
+                <button type="submit" class="btn btn-success" [disabled]="!terminalForm.valid">Assign</button>
+                <button class="btn btn-info" (click)="onBack()">Back</button>
+            </div>
+            <br/>
+            <span class="success-message" *ngIf="successMessage!=null">
+                {{successMessage}}
+            </span>
+            <span class="error-message" *ngIf="errorMessage!=null">
+                {{errorMessage}}
+            </span>
+        </form>
+    </div>
+</div>

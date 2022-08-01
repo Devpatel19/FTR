@@ -1,0 +1,30 @@
+.workitems-container{
+    background-image: url('src\assets\lighthouse-g650f38367_1920.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.card-col{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 1 10px 40px rgba(0,0,0,0.4);
+    z-index: 3;
+    color: white;
+    background-color: cornflowerblue;
+}
+.cust-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

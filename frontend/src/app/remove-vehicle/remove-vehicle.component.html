@@ -1,0 +1,25 @@
+<!-- <app-vehicles></app-vehicles> -->
+<div class="panel panel-primary">
+    <form class="login-form" [formGroup]="loginForm" #myForm="ngForm">
+      <h1 background-color: #3604aa; style="color: #0c0c0c">Delete Vehicle Number</h1>
+  
+      <span>Enter Vehicle Number</span>
+      <input type="String" formControlName="vehicleNumber" class="form-control" />
+  
+      <div *ngIf="loginForm.controls['vehicleNumber'].invalid">
+        <!-- <div *ngIf="loginForm.controls['vehicleNumber'].errors.required" style="color:red">
+          Please Enter Vehicle Number.
+        </div> -->
+      </div>
+  
+      <button [disabled]="!myForm.valid" (click)="deleteVehicle()" type="submit">Delete Vehicle</button>
+  
+      <div>
+        <br />
+      </div>
+  
+      <span *ngIf="showVehicles"
+        style="color: #29873e;padding-left:20px;padding-right: 10px;padding-top: 20px;padding-bottom: 20px;font-family:monospace;font-size: 20px;">{{sucessMessage}}</span>
+  
+    </form>
+  </div>

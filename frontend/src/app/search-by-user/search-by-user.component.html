@@ -1,0 +1,45 @@
+<div class="searchterminal-container">
+    <div class="form-container">
+        <p class="form-heading">Enter User details to view its work item</p>
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="inner-container form-group">
+                <label for="userId">User ID</label>
+                <input id="userId" formControlName="userId" class="form-control" />
+                <p *ngIf="searchForm.controls['userId'].touched&&searchForm.controls['userId'].errors?.['required']" class="error-message"> 
+                    *This field is required!
+                </p>
+                <p *ngIf="searchForm.controls['userId'].touched&&searchForm.controls['userId'].errors?.['pattern']" class="error-message">
+                    *No characters are allowed!
+                    </p>
+                <p *ngIf="searchForm.controls['userId'].touched&&searchForm.controls['userId'].errors?.['maxlength']" class="error-message">
+                *Maximum 5 characters are allowed.
+                </p>
+            </div>
+            <div class="button-container"> 
+                <button type="submit" class="btn btn-success" [disabled]="!searchForm.valid">Get Vehicle</button>
+                <button class="btn btn-info" (click)="onBack()">Back</button>
+            </div>
+            <br/>
+            <span class="error-message" *ngIf="errorMessage!=null">
+                {{errorMessage}}
+            </span>
+        </form>
+    </div>
+    <div class="table-container" *ngIf="responseObject" >
+        <table border="1" >
+            <thead>
+                <th>Vehicle Number</th>
+                <th>Workitem ID</th>
+                <th>Status</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{responseObject.vehicleNumber}}</td>
+                    <td>{{responseObject.workitemId}}</td>
+                    <td>{{responseObject.assignedWorkitemStatus}}</td>
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

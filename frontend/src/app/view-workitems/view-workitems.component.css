@@ -1,0 +1,46 @@
+.view-container{
+    background-image: url('src\assets\lighthouse-g650f38367_1920.jpg');
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    Justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+}
+.inner-container{
+    background-color: #ffffff95;
+    width: 80%;
+    border-radius: 10px;
+}
+.table-container{
+    overflow: auto;
+    padding: 10px;
+}
+.heading{
+    background-color: #ffffff99;
+    padding: 10px;
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+thead,tbody{
+    text-align: center;
+    color: black;
+}
+th,td{
+    min-width: 150px;
+    height: 50px;
+}
+.paginator{
+    display: flex;
+    justify-content: center;
+    align-self:center;
+    margin-top: 5px;
+}
+.back-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}

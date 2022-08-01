@@ -1,0 +1,68 @@
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/FTR" >FTR</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+       data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+       aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      &nbsp; &nbsp;
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" routerLink="/login" >User Login</a>
+          &nbsp; &nbsp;
+          <a class="nav-link" routerLink="/userProfile">Register</a>
+         
+        </div>
+      
+      </div>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+<body>
+
+    <div>
+        <h1 >Admin Login Page</h1>
+        <hr>
+    </div>
+      
+ 
+  <main>
+  
+      <form  >
+          <div class="form-group">
+            
+            &nbsp;
+              <label>userId </label>
+              &nbsp;
+              &nbsp;&nbsp;
+              <input class="field-control" [(ngModel)]="userId"  name="login_txt" type="text" placeholder=" Admin userId" autofocus>
+            <br>
+            <br>
+            
+              <label style="margin-left: 5px;">password </label>&nbsp;
+              <input id="pass" [(ngModel)]="password"    class="field-control" name="password_txt" type="password" placeholder="Enter Password">
+            <br>&nbsp;&nbsp;
+              <button  class="submit_class" type="submit" form="login_form"  (click)="authenticate()" >Log in</button>
+              <button type="submit" class="submit_class"  routerLink="/FTR">Back</button>
+              <!-- <button class="submit_class" type="submit" form="login_form"  routerLink="/userProfile" >Create User</button> -->
+              
+             
+               
+              <p style="color:red;">{{err}}</p>
+             
+          </div>
+         
+      </form>
+    
+     
+  </main>
+ 
+</body> 
+

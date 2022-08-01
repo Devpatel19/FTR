@@ -1,0 +1,19 @@
+.admin-container{
+    background-image: url("https://mcdn.wallpapersafari.com/medium/3/2/xiovew.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 199px;
+}
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 1 10px 40px rgba(0,0,0,0.4);
+    z-index: 3;
+    color: white;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
